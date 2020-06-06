@@ -73,15 +73,16 @@ preprocess <- function() {
                                              "text/comma-separated-values,text/plain",
                                              ".csv")),
 
-                        fileInput(inputId = "bam_list",
-                                  label = "Load a bam.list file: one bam paths
-                                in one row",
-                                  accept = c("text/csv",
-                                             ".zip",
-                                             ".gz",
-                                             ".bed",
-                                             "text/comma-separated-values,text/plain",
-                                             ".csv"))),
+                        #fileInput(inputId = "bam_list",
+                         #         label = "Load a bam.list file: one bam paths
+                          #      in one row",
+                           #       accept = c("text/csv",
+                            #                 ".zip",
+                             #                ".gz",
+                              #               ".bed",
+                               #              "text/comma-separated-values,text/plain",
+                                #             ".csv"))
+                        ),
                       shiny::mainPanel(
                         tabsetPanel(
                           tabPanel(title= "input for uncoverapp",

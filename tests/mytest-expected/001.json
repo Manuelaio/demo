@@ -1,19 +1,5 @@
 {
   "input": {
-    "bam_list": {
-      "name": [
-        "bam.list"
-      ],
-      "size": [
-        64
-      ],
-      "type": [
-        ""
-      ],
-      "datapath": [
-        "0.list"
-      ]
-    },
     "button1": 0,
     "button5": 0,
     "Chromosome": "chr1",

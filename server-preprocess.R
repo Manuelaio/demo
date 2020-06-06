@@ -15,13 +15,14 @@ gene_list <- reactive ({
    #print(ff)
 })
 
-list_bam= reactive({
-   if (is.null(input$bam_list)) {return(NULL)}
-   tmp_bam <- scan(input$bam_list$datapath, character(), quote = "")
-   #list_bam= (tmp_bam)
-   #print(tmp_bam)
-})
+#list_bam= reactive({
+ #  if (is.null(input$bam_list)) {return(NULL)}
+  # tmp_bam <- scan(input$bam_list$datapath, character(), quote = "")
+   ##list_bam= (tmp_bam)
+   ##print(tmp_bam)
+#})
 
+list_bam= Rsamtools::BamFile("./script/example_POLG.bam")
 
 all_gene<- reactive({ if (input$Genome == "hg19"){
    all_gene<- TxDb.Hsapiens.UCSC.hg19.knownGene}else{
@@ -31,8 +32,8 @@ all_gene<- reactive({ if (input$Genome == "hg19"){
 no_entrID<- reactive({
    if (is.null(gene_list()))
       return(NULL)
-   if (is.null(list_bam()))
-      return(NULL)
+  # if (is.null(list_bam()))
+   #   return(NULL)
    gene_list1= gene_list()
    my_gene_name= OrganismDbi::select(org.Hs.eg.db, key= gene_list1, columns="ENTREZID",
                                      keytype="ALIAS")
@@ -55,8 +56,8 @@ no_entrID<- reactive({
 pileup_input<- reactive({
    if (is.null(gene_list()))
       return(NULL)
-   if (is.null(list_bam()))
-      return(NULL)
+   #if (is.null(list_bam()))
+    #  return(NULL)
    if(nrow(no_entrID())!=0)
       return(no_entrID())
    
@@ -81,8 +82,10 @@ pileup_input<- reactive({
                          pre$start[row], pre$end[row], stringsAsFactors = FALSE)
       for_bed= rbind(for_bed, sel_cc)
    }
+   print(head(for_bed))
    colnames(for_bed)=c('chr', 'start', 'end')
    for_bed= unique(for_bed)
+   print(head(for_bed))
    
    
    if(input$notation == "number"){
@@ -92,6 +95,7 @@ pileup_input<- reactive({
                                                        keep.extra.columns = TRUE)
    #print(for_grange)
    param <- Rsamtools::ScanBamParam(which= for_grange)
+   print(param)
    
    p_param <- Rsamtools::PileupParam(distinguish_nucleotides=TRUE,
                                      distinguish_strands=FALSE,
@@ -100,16 +104,17 @@ pileup_input<- reactive({
                                      min_nucleotide_depth=1,
                                      max_depth=150000)
    
-   
-   df= list()
-   for (i in list_bam()){
-      pileup_df= Rsamtools::pileup(i, scanBamParam=param, pileupParam=p_param)
+   #df= list()
+   #for (i in list_bam()){
+      #pileup_df= Rsamtools::pileup(i, scanBamParam=param, pileupParam=p_param)
+   pileup_df= Rsamtools::pileup(list_bam, scanBamParam=param, pileupParam=p_param)
+   print(head(pileup_df))
       
-      df=rlist::list.append(df, pileup_df)
-   }
-   lst1 <- lapply(df, function(x) transform(x[,-5]))
-   lst2<- lapply(lst1, function(x) transform(x[!duplicated(x),]))
-   
+     # df=rlist::list.append(df, pileup_df)
+   #}
+   #lst1 <- lapply(df, function(x) transform(x[,-5]))
+   #lst2<- lapply(lst1, function(x) transform(x[!duplicated(x),]))
+   ll= pileup_df[-c(5)]
    riarrange.df = function(list_df){
       require(dplyr)
       list_df %>%
@@ -121,11 +126,14 @@ pileup_input<- reactive({
                           counts=paste(nucleotide, count, sep=':',collapse=';'))
    }
    
-   lst3<- lapply(lst2, riarrange.df)
-   
-   pp=Reduce(function(...) merge(...,by= c("seqnames", "pos", "end"), all=TRUE), lst3)
-   pp[is.na(pp)] <- 0
-   pp=as.data.frame(pp)
+   #lst3<- lapply(lst2, riarrange.df)
+   lst3<- riarrange.df(ll)
+   print(head(lst3))
+   #pp=Reduce(function(...) merge(...,by= c("seqnames", "pos", "end"), all=TRUE), lst3)
+   #pp[is.na(pp)] <- 0
+   lst3[is.na(lst3)]<-0
+   pp=as.data.frame(lst3)
+   print(pp)
    if(input$notation == "number"){
       for (i in pp[1]){
          Chromosome<-paste("chr", i, sep="")
