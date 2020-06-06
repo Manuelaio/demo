@@ -1,0 +1,195 @@
+{
+  "input": {
+    "bam_list": {
+      "name": [
+        "bam.list"
+      ],
+      "size": [
+        64
+      ],
+      "type": [
+        ""
+      ],
+      "datapath": [
+        "0.list"
+      ]
+    },
+    "button1": 0,
+    "button5": 0,
+    "Chromosome": "chr1",
+    "close": 0,
+    "coverage_co": "1",
+    "end_genomicPosition": "",
+    "end_gp": "",
+    "exon_number": "1",
+    "file1": null,
+    "Gene_name": "",
+    "gene1": {
+      "name": [
+        "mygene.txt"
+      ],
+      "size": [
+        4
+      ],
+      "type": [
+        "text/plain"
+      ],
+      "datapath": [
+        "0.txt"
+      ]
+    },
+    "Genome": "hg19",
+    "header": true,
+    "hetA": 0.1,
+    "hetG": 1,
+    "id_t": "",
+    "inh": "monoallelic",
+    "notation": "chr",
+    "num_all": 10,
+    "p": 1e-05,
+    "pen": 0.5,
+    "pileup": 0,
+    "prev": 500,
+    "query_Database": "",
+    "remove": 0,
+    "remove5": 0,
+    "Sample": "",
+    "Start_genomicPosition": "",
+    "start_gp": "",
+    "tabSet": "bed file",
+    "transcript_id": "",
+    "UCSC_Genome": "hg19"
+  },
+  "output": {
+    "bd": {
+      "message": "Please, select genomic intervals",
+      "call": "NULL",
+      "type": [
+        "shiny.silent.error",
+        "validation"
+      ]
+    },
+    "ci": {
+      "message": "Please, select genomic intervals",
+      "call": "NULL",
+      "type": [
+        "shiny.silent.error",
+        "validation"
+      ]
+    },
+    "input1": {
+      "x": {
+        "filter": "none",
+        "container": "<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>1<\/th>\n      <th>2<\/th>\n      <th>3<\/th>\n      <th>4<\/th>\n      <th>5<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>",
+        "options": {
+          "columnDefs": [
+            {
+              "className": "dt-right",
+              "targets": [
+                2,
+                3,
+                4
+              ]
+            },
+            {
+              "orderable": false,
+              "targets": 0
+            }
+          ],
+          "order": [
+
+          ],
+          "autoWidth": false,
+          "orderClasses": false,
+          "ajax": {
+            "type": "POST",
+            "data": "function(d) {\nd.search.caseInsensitive = true;\nd.search.smart = true;\nd.escape = true;\nvar encodeAmp = function(x) { x.value = x.value.replace(/&/g, \"%26\"); }\nencodeAmp(d.search);\n$.each(d.columns, function(i, v) {encodeAmp(v.search);});\n}"
+          },
+          "serverSide": true,
+          "processing": true
+        },
+        "selection": {
+          "mode": "multiple",
+          "selected": null,
+          "target": "row"
+        }
+      },
+      "evals": [
+        "options.ajax.data"
+      ],
+      "jsHooks": [
+
+      ],
+      "deps": [
+        {
+          "name": "dt-core",
+          "version": "1.10.20",
+          "src": {
+            "href": "dt-core-1.10.20"
+          },
+          "meta": null,
+          "script": "js/jquery.dataTables.min.js",
+          "stylesheet": [
+            "css/jquery.dataTables.min.css",
+            "css/jquery.dataTables.extra.css"
+          ],
+          "head": null,
+          "attachment": null,
+          "package": null,
+          "all_files": false
+        },
+        {
+          "name": "jquery",
+          "version": "1.11.3",
+          "src": {
+            "href": "jquery-1.11.3"
+          },
+          "meta": null,
+          "script": "jquery.min.js",
+          "stylesheet": null,
+          "head": null,
+          "attachment": null,
+          "all_files": true
+        },
+        {
+          "name": "crosstalk",
+          "version": "1.1.0.1",
+          "src": {
+            "href": "crosstalk-1.1.0.1"
+          },
+          "meta": null,
+          "script": "js/crosstalk.min.js",
+          "stylesheet": "css/crosstalk.css",
+          "head": null,
+          "attachment": null,
+          "all_files": true
+        }
+      ]
+    },
+    "maxAF": "2e-04",
+    "pbinom": {
+      "message": "Please, select genomic intervals",
+      "call": "NULL",
+      "type": [
+        "shiny.silent.error",
+        "validation"
+      ]
+    },
+    "text": [
+      "Please, upload your file",
+      "NULL",
+      "c(\"shiny.silent.error\", \"validation\")"
+    ],
+    "uncoverPosition": {
+      "message": "Unrecognized data set: Please load your file\nPlease select all required input: Gene,\n           Chromosome, Coverage threshold and Sample",
+      "call": "NULL",
+      "type": [
+        "shiny.silent.error",
+        "validation"
+      ]
+    }
+  },
+  "export": {
+
+  }
+}
