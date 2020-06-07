@@ -9,3 +9,12 @@ app$setInputs(Gene_name = "POLG",wait_=FALSE, values_=FALSE)
 app$setInputs(tabSet = "UCSC gene", wait_=FALSE, values_=FALSE)
 app$setInputs(button1 = "click", timeout_=1000000)
 app$snapshot()
+app$setInputs(Chromosome = "chr15",wait_=FALSE, values_=FALSE)
+app$setInputs(coverage_co = "20",wait_=FALSE, values_=FALSE)
+app$setInputs(Sample = "1",wait_=FALSE, values_=FALSE)
+app$setInputs(transcript_id = "1",wait_=FALSE, values_=FALSE)
+app$setInputs(exon_number = "10", timeout_=100000000)
+app$setInputs(tabSet = "Low-coverage positions", timeout_=10000000)
+app$snapshot()
+
+
