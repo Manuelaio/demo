@@ -110,7 +110,7 @@ myHome <- function() {
 
              textInput(inputId = "Gene_name",
                        label= "Gene name"),
-             #actionButton("button1",label= "Apply"),
+             #shiny::actionButton("button1",label= "Apply"),
              shinyBS::bsButton("button1",label= "Apply",  icon = icon("power-off"),
                                style = "success", size = "extra-small"),
              shinyjs::hidden(p(id = "text1", "Running.....")),
