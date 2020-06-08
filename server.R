@@ -36,6 +36,7 @@ server <- function (input, output, session){
     validate(need(input$Gene_name != "" & input$Sample !="",
                   "Please select all required input: Gene, Chromosome,
                   Coverage threshold and Sample"))
+    Sys.sleep(5)
     filtered_low()})
 
   #source script to reactive gene and exon table
