@@ -378,7 +378,7 @@ ui <- shinyUI(navbarPage(title="unCOVERApp",
                          intro(),
                          preprocess(),
                          myHome(),
-                         myTab1(),
+                         #myTab1(),
                          myTab2(),
                          myabout())
 ))
