@@ -18,6 +18,4 @@ Sys.sleep(30)
 app$setInputs(tabSet = "Gene coverage",wait_=FALSE, values_=FALSE)
 Sys.sleep(180)
 app$snapshot()
-app$setInputs(tabSet = "Annotations on low-coverage positions",wait_=FALSE, values_=FALSE)
-Sys.sleep(280)
-app$snapshot()
+
