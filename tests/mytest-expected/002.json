@@ -26,7 +26,10 @@
     },
     "Genome": "hg19",
     "header": true,
+    "hetA": 0.1,
+    "hetG": 1,
     "id_t": "",
+    "inh": "monoallelic",
     "input1_cell_clicked": {
 
     },
@@ -4372,7 +4375,9 @@
     "notation": "chr",
     "num_all": 10,
     "p": 1e-05,
+    "pen": 0.5,
     "pileup": 1,
+    "prev": 500,
     "query_Database": "",
     "remove": 0,
     "remove5": 0,
@@ -8831,6 +8836,7 @@
         }
       ]
     },
+    "maxAF": "2e-04",
     "pbinom": {
       "message": "Please, select genomic intervals",
       "call": "NULL",
@@ -8926,6 +8932,14 @@
           "attachment": null,
           "all_files": true
         }
+      ]
+    },
+    "uncoverPosition": {
+      "message": "Please select all required input: Gene,\n           Chromosome, Coverage threshold and Sample",
+      "call": "NULL",
+      "type": [
+        "shiny.silent.error",
+        "validation"
       ]
     }
   },

@@ -15,7 +15,7 @@ app$setInputs(transcript_id = "1",wait_=FALSE, values_=FALSE)
 app$setInputs(exon_number = "10",timeout_=1000000)
 
 app$setInputs(tabSet = "Low-coverage positions",wait_=FALSE, values_=FALSE)
-Sys.sleep(20)
+Sys.sleep(180)
 app$setInputs(tabSet = "Gene coverage",wait_=FALSE, values_=FALSE)
 Sys.sleep(180)
 app$snapshot()
