@@ -4387,7 +4387,7 @@
     "Sample": "1",
     "Start_genomicPosition": "89868681",
     "start_gp": "",
-    "tabSet": "Low-coverage positions",
+    "tabSet": "Gene coverage",
     "text_cell_clicked": {
 
     },
@@ -9711,6 +9711,40 @@
     "UCSC_Genome": "hg19"
   },
   "output": {
+    "all_gene": {
+      "src": "[image data sha1: ccdddeef562ef7d8e90f94fc94937336848ca4de]",
+      "width": 611,
+      "height": 400,
+      "coordmap": {
+        "panels": [
+          {
+            "domain": {
+              "left": -0.04,
+              "right": 1.04,
+              "bottom": -0.04,
+              "top": 1.04
+            },
+            "range": {
+              "left": 0,
+              "right": 611,
+              "bottom": 399,
+              "top": -1
+            },
+            "log": {
+              "x": null,
+              "y": null
+            },
+            "mapping": {
+
+            }
+          }
+        ],
+        "dims": {
+          "width": 611,
+          "height": 400
+        }
+      }
+    },
     "bd": {
       "message": "Please, select genomic intervals",
       "call": "NULL",

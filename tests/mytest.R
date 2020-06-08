@@ -16,6 +16,6 @@ app$setInputs(exon_number = "10",timeout_=1000000)
 
 app$setInputs(tabSet = "Low-coverage positions",wait_=FALSE, values_=FALSE)
 Sys.sleep(20)
-#app$setInputs(tabSet = "Gene coverage",wait_=FALSE, values_=FALSE)
-#app$waitForValue("Gene coverage", iotype = "output", ignore = list(priorPlotValue))
+app$setInputs(tabSet = "Gene coverage",wait_=FALSE, values_=FALSE)
+Sys.sleep(180)
 app$snapshot()
