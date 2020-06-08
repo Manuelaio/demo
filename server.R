@@ -63,8 +63,8 @@ server <- function (input, output, session){
     p1()
   })
 
-  output$df.l<- DT::renderDataTable({
-    table1()})
+  #output$df.l<- DT::renderDataTable({
+   # table1()})
 
   #plot with sequence reference
 

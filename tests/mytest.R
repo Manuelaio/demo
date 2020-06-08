@@ -1,20 +1,19 @@
 app <- ShinyDriver$new("../")
 app$snapshotInit("mytest")
-
-app$uploadFile(gene1 = "mygene.txt", wait_=FALSE, values_=FALSE) # <-- This should be the path to the file, relative to the app's tests/ directory
+app$uploadFile(gene1 = "mygene.txt",wait_=FALSE, values_=FALSE) # <-- This should be the path to the file, relative to the app's tests/ directory
 app$snapshot()
-app$setInputs(pileup = "click", timeout_=10000)
+app$setInputs(pileup = "click",timeout_=100000)
 app$snapshot()
 app$setInputs(Gene_name = "POLG",wait_=FALSE, values_=FALSE)
-app$setInputs(tabSet = "UCSC gene", wait_=FALSE, values_=FALSE)
-app$setInputs(button1 = "click", timeout_=1000000)
+app$setInputs(tabSet = "UCSC gene",wait_=FALSE, values_=FALSE)
+app$setInputs(button1 = "click",timeout_=100000)
 app$snapshot()
 app$setInputs(Chromosome = "chr15",wait_=FALSE, values_=FALSE)
 app$setInputs(coverage_co = "20",wait_=FALSE, values_=FALSE)
+app$setInputs(coverage_co = "15",wait_=FALSE, values_=FALSE)
 app$setInputs(Sample = "1",wait_=FALSE, values_=FALSE)
 app$setInputs(transcript_id = "1",wait_=FALSE, values_=FALSE)
-app$setInputs(exon_number = "10", timeout_=100000000)
-app$setInputs(tabSet = "Low-coverage positions", timeout_=10000000)
+app$setInputs(exon_number = "10",timeout_=1000000)
+app$setInputs(tabSet = "Low-coverage positions",wait_=FALSE, values_=FALSE)
+app$setInputs(tabSet = "Gene coverage",wait_=FALSE, values_=FALSE)
 app$snapshot()
-
-
