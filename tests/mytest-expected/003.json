@@ -1,7 +1,15 @@
 {
   "input": {
-    "button1": 0,
+    "button1": 1,
     "button5": 0,
+    "ccg_cell_clicked": {
+
+    },
+    "ccg_rows_all": 1,
+    "ccg_rows_current": 1,
+    "ccg_rows_selected": null,
+    "ccg_search": "",
+    "ccg_state": null,
     "Chromosome": "chr1",
     "close": 0,
     "coverage_co": "1",
@@ -4373,13 +4381,13 @@
     "num_all": 10,
     "p": 1e-05,
     "pileup": 1,
-    "query_Database": "",
+    "query_Database": ":-",
     "remove": 0,
     "remove5": 0,
     "Sample": "",
     "Start_genomicPosition": "",
     "start_gp": "",
-    "tabSet": "bed file",
+    "tabSet": "UCSC gene",
     "text_cell_clicked": {
 
     },
@@ -8732,6 +8740,95 @@
       "type": [
         "shiny.silent.error",
         "validation"
+      ]
+    },
+    "ccg": {
+      "x": {
+        "filter": "none",
+        "container": "<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>ENTREZID<\/th>\n      <th>seqnames<\/th>\n      <th>start<\/th>\n      <th>end<\/th>\n      <th>width<\/th>\n      <th>strand<\/th>\n      <th>ALIAS<\/th>\n      <th>GENENAME<\/th>\n      <th>ENSEMBL<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>",
+        "options": {
+          "columnDefs": [
+            {
+              "className": "dt-right",
+              "targets": [
+                3,
+                4,
+                5
+              ]
+            },
+            {
+              "orderable": false,
+              "targets": 0
+            }
+          ],
+          "order": [
+
+          ],
+          "autoWidth": false,
+          "orderClasses": false,
+          "ajax": {
+            "type": "POST",
+            "data": "function(d) {\nd.search.caseInsensitive = true;\nd.search.smart = true;\nd.escape = true;\nvar encodeAmp = function(x) { x.value = x.value.replace(/&/g, \"%26\"); }\nencodeAmp(d.search);\n$.each(d.columns, function(i, v) {encodeAmp(v.search);});\n}"
+          },
+          "serverSide": true,
+          "processing": true
+        },
+        "selection": {
+          "mode": "multiple",
+          "selected": null,
+          "target": "row"
+        }
+      },
+      "evals": [
+        "options.ajax.data"
+      ],
+      "jsHooks": [
+
+      ],
+      "deps": [
+        {
+          "name": "dt-core",
+          "version": "1.10.20",
+          "src": {
+            "href": "dt-core-1.10.20"
+          },
+          "meta": null,
+          "script": "js/jquery.dataTables.min.js",
+          "stylesheet": [
+            "css/jquery.dataTables.min.css",
+            "css/jquery.dataTables.extra.css"
+          ],
+          "head": null,
+          "attachment": null,
+          "package": null,
+          "all_files": false
+        },
+        {
+          "name": "jquery",
+          "version": "1.11.3",
+          "src": {
+            "href": "jquery-1.11.3"
+          },
+          "meta": null,
+          "script": "jquery.min.js",
+          "stylesheet": null,
+          "head": null,
+          "attachment": null,
+          "all_files": true
+        },
+        {
+          "name": "crosstalk",
+          "version": "1.1.0.1",
+          "src": {
+            "href": "crosstalk-1.1.0.1"
+          },
+          "meta": null,
+          "script": "js/crosstalk.min.js",
+          "stylesheet": "css/crosstalk.css",
+          "head": null,
+          "attachment": null,
+          "all_files": true
+        }
       ]
     },
     "ci": {
