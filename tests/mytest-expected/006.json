@@ -10,12 +10,76 @@
     "ccg_rows_selected": null,
     "ccg_search": "",
     "ccg_state": null,
-    "Chromosome": "chr1",
+    "Chromosome": "chr15",
     "close": 0,
-    "coverage_co": "1",
-    "end_genomicPosition": "",
+    "coverage_co": "32",
+    "end_genomicPosition": "89868917",
     "end_gp": "",
-    "exon_number": "1",
+    "exon_number": "10",
+    "exon_pos_cell_clicked": {
+
+    },
+    "exon_pos_rows_all": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44
+    ],
+    "exon_pos_rows_current": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "exon_pos_rows_selected": null,
+    "exon_pos_search": "",
+    "exon_pos_state": null,
     "file1": null,
     "Gene_name": "POLG",
     "gene1": {
@@ -34,7 +98,7 @@
     },
     "Genome": "hg19",
     "header": true,
-    "id_t": "",
+    "id_t": "uc002bnr.4",
     "input1_cell_clicked": {
 
     },
@@ -4381,13 +4445,13 @@
     "num_all": 10,
     "p": 1e-05,
     "pileup": 1,
-    "query_Database": ":-",
+    "query_Database": "15:89868681-89868917",
     "remove": 0,
     "remove5": 0,
-    "Sample": "",
-    "Start_genomicPosition": "",
+    "Sample": "1",
+    "Start_genomicPosition": "89868681",
     "start_gp": "",
-    "tabSet": "UCSC gene",
+    "tabSet": "Gene coverage",
     "text_cell_clicked": {
 
     },
@@ -8730,10 +8794,44 @@
     "text_rows_selected": null,
     "text_search": "",
     "text_state": null,
-    "transcript_id": "",
+    "transcript_id": "1",
     "UCSC_Genome": "hg19"
   },
   "output": {
+    "all_gene": {
+      "src": "[image data sha1: be0f1fe2c777bd4659ffecbf9c37bb545bd49abd]",
+      "width": 611,
+      "height": 400,
+      "coordmap": {
+        "panels": [
+          {
+            "domain": {
+              "left": -0.04,
+              "right": 1.04,
+              "bottom": -0.04,
+              "top": 1.04
+            },
+            "range": {
+              "left": 0,
+              "right": 611,
+              "bottom": 399,
+              "top": -1
+            },
+            "log": {
+              "x": null,
+              "y": null
+            },
+            "mapping": {
+
+            }
+          }
+        ],
+        "dims": {
+          "width": 611,
+          "height": 400
+        }
+      }
+    },
     "bd": {
       "message": "Please, select genomic intervals",
       "call": "NULL",
@@ -8837,6 +8935,98 @@
       "type": [
         "shiny.silent.error",
         "validation"
+      ]
+    },
+    "exon_pos": {
+      "x": {
+        "filter": "none",
+        "container": "<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>number_of_transcript<\/th>\n      <th>type_of_transcript<\/th>\n      <th>chrom<\/th>\n      <th>start<\/th>\n      <th>end<\/th>\n      <th>length_of_exon<\/th>\n      <th>cds_id<\/th>\n      <th>exon_rank<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>",
+        "options": {
+          "columnDefs": [
+            {
+              "className": "dt-right",
+              "targets": [
+                1,
+                4,
+                5,
+                6,
+                7,
+                8
+              ]
+            },
+            {
+              "orderable": false,
+              "targets": 0
+            }
+          ],
+          "order": [
+
+          ],
+          "autoWidth": false,
+          "orderClasses": false,
+          "ajax": {
+            "type": "POST",
+            "data": "function(d) {\nd.search.caseInsensitive = true;\nd.search.smart = true;\nd.escape = true;\nvar encodeAmp = function(x) { x.value = x.value.replace(/&/g, \"%26\"); }\nencodeAmp(d.search);\n$.each(d.columns, function(i, v) {encodeAmp(v.search);});\n}"
+          },
+          "serverSide": true,
+          "processing": true
+        },
+        "selection": {
+          "mode": "multiple",
+          "selected": null,
+          "target": "row"
+        }
+      },
+      "evals": [
+        "options.ajax.data"
+      ],
+      "jsHooks": [
+
+      ],
+      "deps": [
+        {
+          "name": "dt-core",
+          "version": "1.10.20",
+          "src": {
+            "href": "dt-core-1.10.20"
+          },
+          "meta": null,
+          "script": "js/jquery.dataTables.min.js",
+          "stylesheet": [
+            "css/jquery.dataTables.min.css",
+            "css/jquery.dataTables.extra.css"
+          ],
+          "head": null,
+          "attachment": null,
+          "package": null,
+          "all_files": false
+        },
+        {
+          "name": "jquery",
+          "version": "1.11.3",
+          "src": {
+            "href": "jquery-1.11.3"
+          },
+          "meta": null,
+          "script": "jquery.min.js",
+          "stylesheet": null,
+          "head": null,
+          "attachment": null,
+          "all_files": true
+        },
+        {
+          "name": "crosstalk",
+          "version": "1.1.0.1",
+          "src": {
+            "href": "crosstalk-1.1.0.1"
+          },
+          "meta": null,
+          "script": "js/crosstalk.min.js",
+          "stylesheet": "css/crosstalk.css",
+          "head": null,
+          "attachment": null,
+          "all_files": true
+        }
       ]
     },
     "input1": {
